@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.sitecentral.grpc";
+option java_outer_classname = "VectorProto";
+
+service VectorService {
+  rpc GetVector (TextRequest) returns (VectorResponse) {}
+}
+
+message TextRequest {
+  string text = 1;
+}
+
+message VectorResponse {
+  repeated float embedding = 1;
+}
